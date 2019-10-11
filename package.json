@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "scripts": {
     "build:prod": "ng build --prod",
-    "build:pub": "ng build --prod --output-path docs --base-href https://julitillo:cu97cho288@github.com/IntroAngular4/practica4-julitillo/",
+    "build:pub": "ng build --prod --output-path docs --base-href https://IntroAngular4/practica4-julitillo/",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
