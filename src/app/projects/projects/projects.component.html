@@ -1,0 +1,14 @@
+<header class="sticky">
+  <!-- <a routerLink="."
+     class="button"> List </a> -->
+  <a routerLink="new"
+     class="button"> New </a>
+</header>
+<router-outlet></router-outlet>
+
+<h2>
+  Here you are the current list of projects:
+</h2>
+<ul *ngFor="let project of projects">
+  <li>{{ project.name }}</li>
+</ul>
