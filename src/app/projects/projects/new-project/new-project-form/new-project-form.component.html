@@ -1,0 +1,27 @@
+<h1>New Project</h1>
+
+<form>
+  <fieldset>
+    <label for="name">Name </label>
+    <input type="text"
+           name='name'
+           [(ngModel)]="project.name"
+           placeholder="Project name" />
+  </fieldset>
+
+  <!-- <input name="Save"
+         type="submit"
+         (click)="saveProject()" /> -->
+
+
+  <input name="Save"
+         type="submit"
+         (click)="saveProject.emit(this.project)" />
+
+  <input value="save using servicesave using service"
+         type="button"
+         (click)="saveProjectUsingService.emit(this.project)" />
+
+</form>
+
+<pre>{{ projects | json}}</pre>

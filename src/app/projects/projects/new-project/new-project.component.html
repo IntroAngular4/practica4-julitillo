@@ -1,4 +1,4 @@
-<h1>New Project</h1>
+<!-- <h1>New Project</h1>
 
 <form>
   <fieldset>
@@ -14,4 +14,8 @@
          (click)="saveProject()" />
 </form>
 
-<pre>{{ projects | json}}</pre>
+<pre>{{ projects | json}}</pre> -->
+<app-new-project-form (saveProject)="saveProject($event)"
+                      [projects]="projects"
+                      (saveProjectUsingService)="saveProjectUsingService($event)">
+</app-new-project-form>

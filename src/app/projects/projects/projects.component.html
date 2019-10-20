@@ -1,14 +1,20 @@
 <header class="sticky">
-  <!-- <a routerLink="."
+  <!-- <a routerLink="./"
      class="button"> List </a> -->
   <a routerLink="new"
      class="button"> New </a>
 </header>
 <router-outlet></router-outlet>
-
+<!--
 <h2>
   Here you are the current list of projects:
 </h2>
 <ul *ngFor="let project of projects">
   <li>{{ project.name }}</li>
-</ul>
+</ul> -->
+
+
+<app-filter-projects-form (filterProjects)="filterProjects($event)">
+</app-filter-projects-form>
+
+<app-projects-list [projects]="projects"> </app-projects-list>

@@ -1,0 +1,15 @@
+<h1>Filter by project name</h1>
+
+<form>
+  <fieldset>
+    <label for="name">Project name </label>
+    <input type="text"
+           name='name'
+           [(ngModel)]="name"
+           placeholder="Name" />
+  </fieldset>
+
+  <input name="Filter"
+         type="submit"
+         (click)="filterProjects.emit(this.name)" />
+</form>
