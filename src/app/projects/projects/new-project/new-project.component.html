@@ -17,5 +17,6 @@
 <pre>{{ projects | json}}</pre> -->
 <app-new-project-form (saveProject)="saveProject($event)"
                       [projects]="projects"
-                      (saveProjectUsingService)="saveProjectUsingService($event)">
+                      (saveProjectUsingService)="saveProjectUsingService($event)"
+                      (saveProjectUsingHttp)="saveProjectUsingHttp($event)">
 </app-new-project-form>

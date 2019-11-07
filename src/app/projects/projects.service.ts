@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Project } from './projects/models/project.model';
 
@@ -7,8 +9,24 @@ import { Project } from './projects/models/project.model';
 })
 export class ProjectsService {
   private projects: Project[];
+  projectsAPI = 'https://api-base.herokuapp.com/api/pub/projects';
+  public projectsHttp$: Observable<any> = null;
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
+
+  getHttpProjects(): Observable<Project[]> {
+    this.projectsHttp$ = this.httpClient.get(this.projectsAPI);
+    return this.projectsHttp$;
+  }
+
+  addHttpProject(project: Project) {
+    const ahora = new Date();
+    const id = ahora.getTime();
+    project.name = 'mediante http ... ' + project.name;
+    project.id = id;
+
+    this.httpClient.post(this.projectsAPI, project).subscribe();
+  }
 
   getProjects() {
     this.projects = environment.projects;

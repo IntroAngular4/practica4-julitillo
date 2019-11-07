@@ -4,3 +4,8 @@
 <ul *ngFor="let project of projects">
   <li>{{ project.name }}</li>
 </ul>
+
+<h2>
+  Here you are the current list of projects from https://api-base.herokuapp.com/api/pub/projects:
+</h2>
+<pre>{{ projectsHttp | json }}</pre>

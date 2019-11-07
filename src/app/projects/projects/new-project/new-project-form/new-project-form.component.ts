@@ -10,6 +10,7 @@ export class NewProjectFormComponent implements OnInit {
   @Input() public projects: Project[];
   @Output() public saveProject = new EventEmitter<Project>();
   @Output() public saveProjectUsingService = new EventEmitter<Project>();
+  @Output() public saveProjectUsingHttp = new EventEmitter<Project>();
 
   public project: Project = {
     id: -1,

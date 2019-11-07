@@ -18,9 +18,13 @@
          type="submit"
          (click)="saveProject.emit(this.project)" />
 
-  <input value="save using servicesave using service"
+         <input value="save using servicesave using service"
          type="button"
          (click)="saveProjectUsingService.emit(this.project)" />
+
+        <input value="save using servicesave using Http"
+        type="button"
+        (click)="saveProjectUsingHttp.emit(this.project)" />
 
 </form>
 

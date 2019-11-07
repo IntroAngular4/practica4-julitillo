@@ -17,4 +17,6 @@
 <app-filter-projects-form (filterProjects)="filterProjects($event)">
 </app-filter-projects-form>
 
-<app-projects-list [projects]="projects"> </app-projects-list>
+<app-projects-list [projects]="projects"
+                  [projectsHttp]="projectsHttp"
+> </app-projects-list>
