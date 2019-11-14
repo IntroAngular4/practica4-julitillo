@@ -1,3 +1,13 @@
-<h5>
-  footer works!
-</h5>
+<h1>Última notificación</h1>
+
+<span *ngFor="let notificacion of notificaciones$ | async  as notificaciones  ; index as i; last as isLast">
+  <span *ngIf="isLast">{{notificacion}}</span>
+</span>
+
+
+<h4>Historial de notificaciones</h4>
+<ul>
+  <li *ngFor="let notificacion of notificaciones$ | async | reverse as notificaciones; index as i; first as isFirst">
+    {{notificaciones.length-i}} de {{notificaciones.length}} -> {{notificacion}}
+  </li>
+</ul>

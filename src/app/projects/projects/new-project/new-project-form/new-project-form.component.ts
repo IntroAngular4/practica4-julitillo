@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Project } from '../../models/project.model';
 
 @Component({
@@ -17,7 +18,43 @@ export class NewProjectFormComponent implements OnInit {
     name: ''
   };
 
-  constructor() {}
+  public formGroup: FormGroup;
 
-  ngOnInit() {}
+  //constructor() { }
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.buildForm();
+  }
+
+  private buildForm() {
+    this.formGroup = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(5)]]
+    });
+  }
+
+  // public getError(controlName: string): string {
+  //   let error = '';
+  //   const control = this.formGroup.get(controlName);
+  //   if (control.touched && control.errors != null) {
+  //     error = JSON.stringify(control.errors);
+  //   }
+  //   return error;
+  // }
+
+  public fSaveProject() {
+    this.project = this.formGroup.value;
+    this.saveProject.emit(this.project);
+    this.formGroup.reset();
+  }
+  public fSaveProjectUsingService() {
+    this.project = this.formGroup.value;
+    this.saveProjectUsingService.emit(this.project);
+    this.formGroup.reset();
+  }
+  public fSaveProjectUsingHttp() {
+    this.project = this.formGroup.value;
+    this.saveProjectUsingHttp.emit(this.project);
+    this.formGroup.reset();
+  }
 }

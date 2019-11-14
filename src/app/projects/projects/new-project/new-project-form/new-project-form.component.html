@@ -1,31 +1,48 @@
 <h1>New Project</h1>
 
 <form>
-  <fieldset>
-    <label for="name">Name </label>
-    <input type="text"
+  <form [formGroup]="formGroup">
+
+    <fieldset>
+      <label for="name">Name </label>
+      <!-- <input type="text"
            name='name'
            [(ngModel)]="project.name"
-           placeholder="Project name" />
-  </fieldset>
+           placeholder="Project name" /> -->
+      <input type="text"
+             name='name'
+             formControlName="name"
+             placeholder="Project name" />
+      <!-- <span>{{ getError('name')}}</span> -->
+    </fieldset>
 
-  <!-- <input name="Save"
+
+
+    <!-- <input name="Save"
          type="submit"
          (click)="saveProject()" /> -->
 
 
-  <input name="Save"
-         type="submit"
-         (click)="saveProject.emit(this.project)" />
+    <input name="Save"
+           type="submit"
+           (click)="fSaveProject()" />
+    <!-- (click)="saveProject.emit(this.project)" /> -->
+    <!-- [disabled]="formGroup.invalid" /> -->
 
-         <input value="save using servicesave using service"
-         type="button"
-         (click)="saveProjectUsingService.emit(this.project)" />
+    <input value="save using servicesave using service"
+           type="button"
+           (click)="fSaveProjectUsingService()" />
+    <!-- (click)="saveProjectUsingService.emit(this.project)" /> -->
+    <!-- [disabled]="formGroup.invalid" /> -->
 
-        <input value="save using servicesave using Http"
-        type="button"
-        (click)="saveProjectUsingHttp.emit(this.project)" />
+    <input value="save using servicesave using Http"
+           type="button"
+           (click)="fSaveProjectUsingHttp()" />
+    <!-- (click)="saveProjectUsingHttp.emit(this.project)" /> -->
+    <!-- [disabled]="formGroup.invalid" /> -->
 
-</form>
+  </form>
 
-<pre>{{ projects | json}}</pre>
+
+
+  <pre>{{ projects | json}}</pre>

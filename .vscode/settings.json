@@ -10,9 +10,14 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.quoteStyle": "single",
-  "prettier.disableLanguages": ["vue", "json", "html", "xlf", "xml", "markdown"],
-  "prettier.eslintIntegration": true,
-  "prettier.tslintIntegration": true,
+"prettier.disableLanguages": [
+    "vue",
+    "json",
+    "html",
+    "xlf",
+    "xml",
+    "markdown"
+],
   "tslint.alwaysShowRuleFailuresAsWarnings": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.preferences.importModuleSpecifier": "relative",
